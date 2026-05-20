@@ -17,6 +17,34 @@ A lightweight Chrome Extension (Manifest V3) that adds a **second layer of warni
 
 ---
 
+## How Scoring Works
+
+Each scam detection check runs independently on the email's visible text, sender name, sender email, and links. When a pattern is detected, a fixed number of points is added to the score. The final score is clamped to 100.
+
+| Check | Points |
+|---|---|
+| Sender display name matches internal staff but email is external | +40 |
+| Asks for phone/WhatsApp/cell number | +30 |
+| Mentions gift cards, vouchers, reimbursements | +35 |
+| Mentions payroll or bank account changes | +35 |
+| Contains a suspicious link (non-HTTPS, IP, excess subdomains) | +25 |
+| Link text domain ≠ actual link destination | +30 |
+| Impersonates an external brand or organisation | +25 |
+| Uses urgency / pressure language | +15 |
+| Vague "click this" / "open this file" with no explanation | +20 |
+| Spelling / look-alike character patterns | +10 |
+
+**Risk levels:**
+
+| Score | Level | Banner |
+|---|---|---|
+| 0–29 | Low | No banner |
+| 30–59 | Caution | 🟡 Yellow |
+| 60–79 | Suspicious | 🟠 Orange |
+| 80–100 | High Risk | 🔴 Red |
+
+---
+
 ## Folder Structure
 
 ```
@@ -102,34 +130,6 @@ npm run watch
 | Email body contains "gift card" or "urgent" | 🟡 Caution or ⚠️ Suspicious |
 | Email body contains a link where the text says `interac.ca` but href goes elsewhere | ⚠️ Suspicious (link mismatch) |
 | Normal internal email from `yourcompany.org` | No banner |
-
----
-
-## How Scoring Works
-
-Each scam detection check runs independently on the email's visible text, sender name, sender email, and links. When a pattern is detected, a fixed number of points is added to the score. The final score is clamped to 100.
-
-| Check | Points |
-|---|---|
-| Sender display name matches internal staff but email is external | +40 |
-| Asks for phone/WhatsApp/cell number | +30 |
-| Mentions gift cards, vouchers, reimbursements | +35 |
-| Mentions payroll or bank account changes | +35 |
-| Contains a suspicious link (non-HTTPS, IP, excess subdomains) | +25 |
-| Link text domain ≠ actual link destination | +30 |
-| Impersonates an external brand or organisation | +25 |
-| Uses urgency / pressure language | +15 |
-| Vague "click this" / "open this file" with no explanation | +20 |
-| Spelling / look-alike character patterns | +10 |
-
-**Risk levels:**
-
-| Score | Level | Banner |
-|---|---|---|
-| 0–29 | Low | No banner |
-| 30–59 | Caution | 🟡 Yellow |
-| 60–79 | Suspicious | 🟠 Orange |
-| 80–100 | High Risk | 🔴 Red |
 
 ---
 
