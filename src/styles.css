@@ -8,12 +8,17 @@
   font-size: 13px;
   line-height: 1.5;
   border-radius: 8px;
-  margin: 8px 12px 12px 12px;
-  padding: 12px 14px;
+  margin: 12px 0 14px 0;
+  padding: 14px 18px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 100;
   border-left: 5px solid transparent;
+
+  width: min(760px, calc(100vw - 80px));
+  max-width: 760px;
+  min-width: 520px;
+  box-sizing: border-box;
 }
 
 /* ── Risk level colour themes ─────────────────────────────────────────────── */
