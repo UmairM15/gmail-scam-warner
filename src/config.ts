@@ -45,6 +45,25 @@ export const config = {
     "meet.google.com"
   ],
 
+  // ── Google Calendar / Meet trusted domains ─────────────────────────────────
+  // Links to these domains inside a likely Calendar invite are never flagged
+  // as suspicious or mismatched. Subdomains are also matched automatically
+  // (e.g. meet.google.com, calendar.google.com).
+  trustedMeetingDomains: [
+    "meet.google.com",
+    "calendar.google.com",
+    "google.com",
+  ],
+
+  // ── Trusted Google Calendar sender addresses ────────────────────────────────
+  // Emails FROM these exact addresses are treated as Google Calendar
+  // notifications. Combined with body content checks, they suppress false
+  // positives on legitimate meeting invites.
+  trustedCalendarSenders: [
+    "calendar-notification@google.com",
+    "calendar-noreply@google.com",
+  ],
+
   // ── Keywords that suggest requesting personal contact info ─────────────────
   // Matching ANY of these in the body adds to the score.
   contactKeywords: [
@@ -132,6 +151,7 @@ export const config = {
     urgencyLanguage: 15,        // Urgency keywords
     vagueDocRequest: 20,        // Vague "click this" with no context
     spellingIssue: 10,          // Typos / fake-brand characters
+    telLink: 5,                 // tel: link outside a calendar invite (low signal)
   },
 
   // ── Risk thresholds ────────────────────────────────────────────────────────
