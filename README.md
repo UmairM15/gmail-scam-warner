@@ -2,8 +2,6 @@
 
 A lightweight Chrome Extension (Manifest V3) that adds a **second layer of warning** when you open a suspicious or scam-looking email in Gmail.
 
-It runs entirely in your browser. No backend, no database, no AI API, no network requests. Email content is never stored or transmitted anywhere.
-
 ---
 
 ## Folder Structure
@@ -130,8 +128,8 @@ All configuration lives in **`src/config.ts`**. Open it in any text editor.
 
 ```ts
 companyDomains: [
-  "yourcompany.org",
-  "yourcompany.ca",
+  "upluseducation.ca",
+  "yorkeducation.ca",
 ],
 ```
 
@@ -145,6 +143,7 @@ internalNames: [
   "Moxi Zhang",
   "Carey",
   "Tanya",
+  "Umair",
 ],
 ```
 
