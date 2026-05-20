@@ -1,0 +1,132 @@
+/* ─── Gmail Scam Warner — Banner Styles ─────────────────────────────────────
+   All classes are namespaced with "gsw-" to avoid colliding with Gmail's CSS.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Base banner ──────────────────────────────────────────────────────────── */
+#gsw-warning-banner {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 8px;
+  margin: 8px 12px 12px 12px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 100;
+  border-left: 5px solid transparent;
+}
+
+/* ── Risk level colour themes ─────────────────────────────────────────────── */
+
+/* Caution — yellow */
+.gsw-banner--caution {
+  background-color: #fffde7;
+  border-color: #f9a825;
+  color: #5d4037;
+}
+
+/* Suspicious — orange */
+.gsw-banner--suspicious {
+  background-color: #fff3e0;
+  border-color: #e65100;
+  color: #4e342e;
+}
+
+/* High Risk — red */
+.gsw-banner--high-risk {
+  background-color: #ffebee;
+  border-color: #c62828;
+  color: #3e2723;
+}
+
+/* ── Header row ───────────────────────────────────────────────────────────── */
+.gsw-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.gsw-icon {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.gsw-level {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.gsw-score {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-left: 2px;
+}
+
+/* Push dismiss to the far right */
+.gsw-dismiss {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+.gsw-dismiss:hover {
+  opacity: 1;
+}
+
+/* ── Score progress bar ───────────────────────────────────────────────────── */
+.gsw-scorebar-wrap {
+  height: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.gsw-scorebar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.gsw-scorebar--caution   { background-color: #f9a825; }
+.gsw-scorebar--suspicious { background-color: #e65100; }
+.gsw-scorebar--high-risk  { background-color: #c62828; }
+
+/* ── Reasons list ─────────────────────────────────────────────────────────── */
+.gsw-reasons {
+  margin: 0 0 10px 0;
+  padding-left: 18px;
+}
+
+.gsw-reasons li {
+  margin-bottom: 3px;
+  font-size: 12.5px;
+}
+
+/* ── Safety reminder ──────────────────────────────────────────────────────── */
+.gsw-reminder {
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 7px 10px;
+  line-height: 1.6;
+}
+
+.gsw-reminder strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 12.5px;
+}
