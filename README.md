@@ -3,6 +3,19 @@
 A lightweight Chrome Extension (Manifest V3) that adds a **second layer of warning** when you open a suspicious or scam-looking email in Gmail.
 
 ---
+## Example Warning Panels
+
+### Cautious Warnings
+
+![Caution Warning Example 1](docs/images/ex1.png)
+![Caution Warning Example 2](docs/images/ex4.png)
+
+### High Risk Warnings
+
+![High Risk Warning Example 1](docs/images/ex2.png)
+![High Risk Warning Example 2](docs/images/ex3.png)
+
+---
 
 ## Folder Structure
 
